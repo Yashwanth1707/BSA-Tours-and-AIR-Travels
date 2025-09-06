@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bsa Tours And Air Travels - Discover South India and Beyond</title>
+    <title>Bsa Air Travels - Discover India and Beyond</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap"
         rel="stylesheet">
     <style>
         body {
@@ -24,14 +25,6 @@
             font-family: 'Michroma', Arial, sans-serif;
         }
 
-        #home {
-            height: 600px;
-        }
-
-        #home h2 {
-            padding-top: 80px;
-        }
-
         .hero {
             background-image: url('https://images.pexels.com/photos/12355317/pexels-photo-12355317.jpeg');
             background-size: cover;
@@ -45,6 +38,7 @@
         .card {
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
         .card:hover {
@@ -54,7 +48,6 @@
         }
 
         @keyframes pulse {
-
             0%,
             100% {
                 transform: translateY(-10px);
@@ -79,6 +72,33 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        @keyframes scroll-x {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll-x {
+            animation: scroll-x 30s linear infinite;
+        }
+
+        #about-carousel {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        #about-carousel-track img {
+            min-width: 400px;
+            max-width: 100vw;
+            height: 100%;
+            display: block;
+        }
     </style>
 </head>
 
@@ -87,14 +107,14 @@
     <nav class="bg-white shadow-lg fixed top-0 w-full z-10">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- <h1 class="text-2xl font-bold text-blue-600">BSA Tours And Air Travels</h1> -->
-            <h1
-                class="flex items-center space-x-3 text-3xl font-bold text-black logo-title">
+            <h1 class="flex items-center space-x-3 text-3xl font-bold text-black logo-title">
                 <img src="images/logo.png" alt="BSA Logo" class="w-20 h-20">
-                <span>BSA Tours And Air Travels</span>
+                <span>BSA Air Travels</span>
             </h1>
             <ul class="hidden md:flex space-x-6">
                 <li><a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
-                <li><a href="#south-india" class="text-gray-700 hover:text-blue-600 transition">South India Tours</a>
+                <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a></li>
+                <li><a href="#south-india" class="text-gray-700 hover:text-blue-600 transition">India Tours</a>
                 </li>
                 <li><a href="#international" class="text-gray-700 hover:text-blue-600 transition">International
                         Trips</a></li>
@@ -105,6 +125,7 @@
         </div>
         <ul class="md:hidden hidden space-y-2 px-6 py-2" id="mobile-menu">
             <li><a href="#home" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+            <li><a href="#about" class="block text-gray-700 hover:text-blue-600">About</a></li>
             <li><a href="#south-india" class="block text-gray-700 hover:text-blue-600">South India Tours</a></li>
             <li><a href="#international" class="block text-gray-700 hover:text-blue-600">International Trips</a></li>
             <li><a href="#testimonials" class="block text-gray-700 hover:text-blue-600">Testimonials</a></li>
@@ -112,16 +133,66 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero text-white text-center py-40 relative">
-        <div class="container mx-auto">
+    <div class="h-24 md:h-28"></div>
 
-            <!-- <h2 class="text-4xl font-bold mb-4 animate-bounce">Explore India & the World</h2> -->
-            <!-- <a href="#inquiry"
-                class="bg-blue-600 text-white px-10 py-4 rounded-lg hover:bg-blue-700 transition font-semibold shadow-lg transform hover:scale-105">Book
-                Your Tour</a> -->
+    <!-- About Section with scrolling images and increased overlay opacity -->
+    <section id="about" class="relative py-16 sm:py-24 md:py-32 min-h-[420px] sm:min-h-[520px] md:min-h-[600px]">
+        <div class="absolute inset-0">
+            <!-- Scrolling images carousel with Singapore Airlines flights included -->
+            <div id="about-carousel" class="w-full h-full overflow-hidden">
+                <div id="about-carousel-track" class="flex w-max h-full animate-scroll-x">
+                    <img src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg" alt="Travel 1"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg" alt="Travel 2"
+                        class="h-full w-auto object-cover" />
+                    <!-- Singapore Airlines flight images -->
+                    <img src="https://images.pexels.com/photos/12355317/pexels-photo-12355317.jpeg" alt="Singapore Airlines A380"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/17769743/pexels-photo-17769743.png" alt="Singapore Airlines 777"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg" alt="Travel 3"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Travel 4"
+                        class="h-full w-auto object-cover" />
+                    <!-- Repeat for seamless scroll -->
+                    <img src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg" alt="Travel 1"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg" alt="Travel 2"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/12355317/pexels-photo-12355317.jpeg" alt="Singapore Airlines A380"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/17769743/pexels-photo-17769743.png" alt="Singapore Airlines 777"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg" alt="Travel 3"
+                        class="h-full w-auto object-cover" />
+                    <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Travel 4"
+                        class="h-full w-auto object-cover" />
+                </div>
+            </div>
+            <!-- Decreased opacity overlay for clearer images -->
+            <div class="absolute inset-0 bg-gradient-to-b from-white/40 to-white/60"></div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+        <div class="relative container mx-auto px-4 sm:px-6 md:px-8 max-w-3xl">
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-6 sm:mb-8">BSA Air Travels</h2>
+            <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 text-center">
+                <strong>BSA Air Travels</strong> is a trusted travel company based in India, dedicated to providing
+                memorable journeys across India and the world. With years of experience in the travel industry, we
+                specialize in curated tour packages, flight bookings, and personalized travel planning for families,
+                groups, and solo adventurers.
+            </p>
+            <!-- <ul class="list-disc list-inside text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg">
+                <li>Registered and licensed travel agency with a strong reputation for reliability and customer satisfaction.
+                </li>
+                <li>Expertise in South Indian destinations, international tours, and custom itineraries.</li>
+                <li>24/7 customer support and assistance throughout your journey.</li>
+                <li>Competitive pricing and exclusive deals with top hotels and airlines.</li>
+            </ul>
+            <p class="text-base sm:text-lg text-gray-700 text-center">
+                Whether you dream of exploring the serene backwaters of Kerala, the vibrant cities of Europe, or the
+                wonders of Asia, <strong>BSA Tours And Air Travels</strong> is your trusted partner for safe,
+                comfortable, and unforgettable travel experiences.
+            </p> -->
+        </div>
     </section>
 
     <!-- India Tours Section -->
@@ -129,13 +200,15 @@
         <div class="container mx-auto px-2 sm:px-4 md:px-6">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16">Explore India</h2>
             <div class="relative">
-                <button id="south-india-left" class="hidden md:flex absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
+                <button id="south-india-left"
+                    class="hidden md:flex absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div id="south-india-cards"
-                    class="flex overflow-x-auto md:overflow-x-visible space-x-4 sm:space-x-6 md:space-x-8 scrollbar-hide scroll-smooth snap-x snap-mandatory">
+                    class="flex flex-nowrap overflow-x-auto space-x-4 sm:space-x-6 md:space-x-8 scrollbar-hide snap-x snap-mandatory pb-2">
                     <!-- Card 1 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01545311-486b-4eb7-8776-72b26d9a27f8.png"
                             alt="Serene backwaters of Kerala" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Kerala Backwaters</h3>
@@ -143,7 +216,8 @@
                         <p>Cruise through emerald lazies and stay in charming houseboats.</p>
                     </div>
                     <!-- Card 2 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d37d1fc9-662d-4aa1-b980-ad67b4c46c55.png"
                             alt="Mysore Palace" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Mysore & Bangalore</h3>
@@ -151,7 +225,8 @@
                         <p>Royal palaces, vibrant markets, and tech-savvy city vibes.</p>
                     </div>
                     <!-- Card 3 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d7e6b18-0c4c-4227-946b-0d42f52e46ab.png"
                             alt="Tamil Nadu Temples" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Tamil Nadu Heritage</h3>
@@ -159,7 +234,8 @@
                         <p>Ancient temples, wildlife safaris, and coastal serenity.</p>
                     </div>
                     <!-- Card 4 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/24a43e43-c25d-4042-9fbc-346bb37752da.png"
                             alt="Goa Beach" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Goa Beach Escape</h3>
@@ -167,7 +243,8 @@
                         <p>Relaxed vibes, water sports, and vibrant nightlife.</p>
                     </div>
                     <!-- Card 5 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fd47822e-f3e5-4bbb-ac58-fd9f2679cda7.png"
                             alt="Bandipur National Park" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Karnataka Wildlife</h3>
@@ -175,7 +252,8 @@
                         <p>Safari adventures with tigers and elephants.</p>
                     </div>
                     <!-- Card 6 (NEW) -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg"
                             alt="Andhra Pradesh Temples" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Andhra Pradesh Temples</h3>
@@ -183,15 +261,17 @@
                         <p>Visit Tirupati and other ancient temples.</p>
                     </div>
                     <!-- Card 7 (NEW) -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="https://images.pexels.com/photos/417142/pexels-photo-417142.jpeg"
-                            alt="Hyderabad City" class="mx-auto mb-4 rounded" />
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                        <img src="https://images.pexels.com/photos/417142/pexels-photo-417142.jpeg" alt="Hyderabad City"
+                            class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Hyderabad City</h3>
                         <p class="mb-2">3 Days / $399</p>
                         <p>Charminar, Biryani, and pearls shopping.</p>
                     </div>
                 </div>
-                <button id="south-india-right" class="hidden md:flex absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
+                <button id="south-india-right"
+                    class="hidden md:flex absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -201,15 +281,18 @@
     <!-- International Trips Section -->
     <section id="international" class="py-20">
         <div class="container mx-auto px-2 sm:px-4 md:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16 text-white">Global Adventures</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16 text-white">Global
+                Adventures</h2>
             <div class="relative">
-                <button id="international-left" class="hidden md:flex absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
+                <button id="international-left"
+                    class="hidden md:flex absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div id="international-cards"
-                    class="flex overflow-x-auto md:overflow-x-visible space-x-4 sm:space-x-6 md:space-x-8 scrollbar-hide scroll-smooth snap-x snap-mandatory">
+                    class="flex flex-nowrap overflow-x-auto space-x-4 sm:space-x-6 md:space-x-8 scrollbar-hide snap-x snap-mandatory pb-2">
                     <!-- Card 1 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba2609d8-efef-40f2-b16b-11cebf914562.png"
                             alt="Great Wall of China" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">China Highlights</h3>
@@ -217,7 +300,8 @@
                         <p>Great Wall, Forbidden City, and ancient traditions.</p>
                     </div>
                     <!-- Card 2 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/af8e4e85-5e83-4975-b5f5-3661fd28846f.png"
                             alt="Tokyo Skyline" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Japan Discovery</h3>
@@ -225,7 +309,8 @@
                         <p>Cherry blossoms, neon cities, and tranquil temples.</p>
                     </div>
                     <!-- Card 3 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/beb76b49-aac0-4b66-a5d5-24fe4b00331e.png"
                             alt="Statue of Liberty" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">USA East Coast</h3>
@@ -233,7 +318,8 @@
                         <p>Skyline tours, history, and national parks.</p>
                     </div>
                     <!-- Card 4 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f3639ea6-4c76-41d9-8f3f-f7e7b6ddaaaa.png"
                             alt="Phuket Beaches" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Thailand Islands</h3>
@@ -241,7 +327,8 @@
                         <p>Tropical beaches, scuba diving, and island hopping.</p>
                     </div>
                     <!-- Card 5 -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb0fed66-778e-4ac0-bf44-61674789f5fb.png"
                             alt="Eiffel Tower Paris" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Europe Romance</h3>
@@ -249,7 +336,8 @@
                         <p>Paris, Rome, art, history, and culinary delights.</p>
                     </div>
                     <!-- Card 6 (NEW) -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
                         <img src="https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg"
                             alt="Australia Sydney" class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Australia Wonders</h3>
@@ -257,15 +345,17 @@
                         <p>Sydney Opera, Great Barrier Reef, and wildlife.</p>
                     </div>
                     <!-- Card 7 (NEW) -->
-                    <div class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[80vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg"
-                            alt="Dubai Skyline" class="mx-auto mb-4 rounded" />
+                    <div
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
+                        <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Dubai Skyline"
+                            class="mx-auto mb-4 rounded" />
                         <h3 class="text-xl font-semibold mb-2">Dubai Luxury</h3>
                         <p class="mb-2">6 Days / $1899</p>
                         <p>Burj Khalifa, desert safari, and shopping festivals.</p>
                     </div>
                 </div>
-                <button id="international-right" class="hidden md:flex absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
+                <button id="international-right"
+                    class="hidden md:flex absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -275,7 +365,8 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 section-bg">
         <div class="container mx-auto px-2 sm:px-4 md:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16">What Our Travelers Say</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16">What Our Travelers Say
+            </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                 <div class="testimonial rounded-lg p-6">
                     <p class="mb-4">"Amazing Kerala tour! The backwaters were breathtaking."</p>
@@ -382,14 +473,38 @@
         </div>
     </section>
 
+    <!-- Location Section -->
+    <section id="location" class="py-20 section-bg">
+        <div class="container mx-auto px-2 sm:px-4 md:px-6 max-w-3xl">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">Our Location</h2>
+            <p class="text-lg text-gray-700 mb-6 text-center">
+                Visit our office or find us on the map below.
+            </p>
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1234567890123!2d78.48667131526013!3d9.88504408807051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb977e1234567%3A0xabcdef1234567890!2sKalaiyarkovil%2C%20Tamil%20Nadu%20630551%2C%20India!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="mt-6 text-center text-gray-700">
+                <strong>Address:</strong> DOOR.NO ,646/8E7 IYYURULI THATCHANKANMAI PULIKANMAI, PARUTHIKANMAI JUNCTION, KALAIYARKOVIL -630551
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-10">
-        <div class="container mx-auto">
-            <p class="text-lg">© 2023 Wanderlust Travels. All rights reserved. | Contact: info@wanderlusttravels.com</p>
+        <div class="container mx-auto px-4">
+            <p class="text-lg">
+                © 2025 BSA Air Travels. All rights reserved. | Contact: bsaairtravels16@gmail.com
+            </p>
             <div class="mt-6">
                 <i class="fab fa-facebook text-2xl mx-4 hover:text-blue-400 transition"></i>
-                <i class="fab fa-twitter text-2xl mx-4 hover:text-blue-300 transition"></i>
+                <i class="fab fa-whatsapp text-2xl mx-4 hover:text-green-400 transition"></i>
                 <i class="fab fa-instagram text-2xl mx-4 hover:text-pink-400 transition"></i>
+            </div>
+            <div class="mt-6 text-lg">
+                <strong>Phone:</strong> +91-98765 43210, +91-91234 56789
             </div>
         </div>
     </footer>
@@ -397,212 +512,232 @@
     <!-- Package Modal -->
     <div id="package-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
         <div class="bg-white rounded-lg shadow-lg w-[95vw] max-w-md sm:max-w-lg p-4 sm:p-8 relative">
-            <button id="modal-close" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            <button id="modal-close"
+                class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             <h3 id="modal-title" class="text-xl sm:text-2xl font-bold mb-4"></h3>
             <img id="modal-img" src="" alt="" class="w-full h-40 sm:h-48 object-cover rounded mb-4" />
             <p id="modal-duration" class="mb-2 font-semibold"></p>
             <p id="modal-description" class="mb-4"></p>
-            <button id="modal-book" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-lg transform hover:scale-105">Book Now</button>
+            <button id="modal-book"
+                class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-lg transform hover:scale-105">Book
+                Now</button>
         </div>
     </div>
 
     <script>
-        // Mobile menu toggle
-        documentF.getElementById('mobile-menu-btn').addEventListener('click', function () {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Form submission with validation
-        document.getElementById('inquiry-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            if (name === '') {
-                alert('Please enter your full name.');
-                return;
-            }
-            if (email === '') {
-                alert('Please enter a valid email.');
-                return;
-            }
-            // Basic email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            alert('Thank you for your inquiry, ' + name + '! We will get back to you soon via ' + email + '.');
-            this.reset();
-        });
-
-        // Horizontal scroll for South India section
-        const southIndiaCards = document.getElementById('south-india-cards');
-        document.getElementById('south-india-left').onclick = () => {
-            southIndiaCards.scrollBy({ left: -300, behavior: 'smooth' });
-        };
-        document.getElementById('south-india-right').onclick = () => {
-            southIndiaCards.scrollBy({ left: 300, behavior: 'smooth' });
-        };
-
-        // Horizontal scroll for International section
-        const internationalCards = document.getElementById('international-cards');
-        document.getElementById('international-left').onclick = () => {
-            internationalCards.scrollBy({ left: -300, behavior: 'smooth' });
-        };
-        document.getElementById('international-right').onclick = () => {
-            internationalCards.scrollBy({ left: 300, behavior: 'smooth' });
-        };
-
-        // Card data for both sections
-        const packageCards = [
-            // South India
-            {
-                section: "south-india",
-                title: "Kerala Backwaters",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01545311-486b-4eb7-8776-72b26d9a27f8.png",
-                duration: "4 Nights / $599",
-                description: "Cruise through emerald lazies and stay in charming houseboats."
-            },
-            {
-                section: "south-india",
-                title: "Mysore & Bangalore",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d37d1fc9-662d-4aa1-b980-ad67b4c46c55.png",
-                duration: "5 Days / $699",
-                description: "Royal palaces, vibrant markets, and tech-savvy city vibes."
-            },
-            {
-                section: "south-india",
-                title: "Tamil Nadu Heritage",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d7e6b18-0c4c-4227-946b-0d42f52e46ab.png",
-                duration: "6 Days / $799",
-                description: "Ancient temples, wildlife safaris, and coastal serenity."
-            },
-            {
-                section: "south-india",
-                title: "Goa Beach Escape",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/24a43e43-c25d-4042-9fbc-346bb37752da.png",
-                duration: "5 Nights / $549",
-                description: "Relaxed vibes, water sports, and vibrant nightlife."
-            },
-            {
-                section: "south-india",
-                title: "Karnataka Wildlife",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fd47822e-f3e5-4bbb-ac58-fd9f2679cda7.png",
-                duration: "4 Days / $649",
-                description: "Safari adventures with tigers and elephants."
-            },
-            {
-                section: "south-india",
-                title: "Andhra Pradesh Temples",
-                img: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
-                duration: "5 Days / $599",
-                description: "Visit Tirupati and other ancient temples."
-            },
-            {
-                section: "south-india",
-                title: "Hyderabad City",
-                img: "https://images.pexels.com/photos/417142/pexels-photo-417142.jpeg",
-                duration: "3 Days / $399",
-                description: "Charminar, Biryani, and pearls shopping."
-            },
-            // International
-            {
-                section: "international",
-                title: "China Highlights",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba2609d8-efef-40f2-b16b-11cebf914562.png",
-                duration: "8 Days / $1499",
-                description: "Great Wall, Forbidden City, and ancient traditions."
-            },
-            {
-                section: "international",
-                title: "Japan Discovery",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/af8e4e85-5e83-4975-b5f5-3661fd28846f.png",
-                duration: "10 Days / $2299",
-                description: "Cherry blossoms, neon cities, and tranquil temples."
-            },
-            {
-                section: "international",
-                title: "USA East Coast",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/beb76b49-aac0-4b66-a5d5-24fe4b00331e.png",
-                duration: "12 Days / $2799",
-                description: "Skyline tours, history, and national parks."
-            },
-            {
-                section: "international",
-                title: "Thailand Islands",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f3639ea6-4c76-41d9-8f3f-f7e7b6ddaaaa.png",
-                duration: "7 Days / $1299",
-                description: "Tropical beaches, scuba diving, and island hopping."
-            },
-            {
-                section: "international",
-                title: "Europe Romance",
-                img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb0fed66-778e-4ac0-bf44-61674789f5fb.png",
-                duration: "10 Days / $1999",
-                description: "Paris, Rome, art, history, and culinary delights."
-            },
-            {
-                section: "international",
-                title: "Australia Wonders",
-                img: "https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg",
-                duration: "9 Days / $2599",
-                description: "Sydney Opera, Great Barrier Reef, and wildlife."
-            },
-            {
-                section: "international",
-                title: "Dubai Luxury",
-                img: "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg",
-                duration: "6 Days / $1899",
-                description: "Burj Khalifa, desert safari, and shopping festivals."
-            }
-        ];
-
-        // Attach click listeners to all cards in both sections
-        function attachCardListeners(sectionId, cardsSelector) {
-            const cards = document.querySelectorAll(`#${cardsSelector} .card`);
-            let cardIndex = 0;
-            cards.forEach(card => {
-                card.setAttribute('data-card-index', cardIndex);
-                card.addEventListener('click', function () {
-                    const pkg = packageCards.filter(p => p.section === sectionId)[cardIndex];
-                    if (pkg) {
-                        document.getElementById('modal-title').textContent = pkg.title;
-                        document.getElementById('modal-img').src = pkg.img;
-                        document.getElementById('modal-img').alt = pkg.title;
-                        document.getElementById('modal-duration').textContent = pkg.duration;
-                        document.getElementById('modal-description').textContent = pkg.description;
-                        document.getElementById('package-modal').classList.remove('hidden');
-                        // Store selected package for booking
-                        document.getElementById('modal-book').setAttribute('data-package', pkg.title);
-                    }
-                });
-                cardIndex++;
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
             });
-        }
-        attachCardListeners('south-india', 'south-india-cards');
-        attachCardListeners('international', 'international-cards');
 
-        // Modal close
-        document.getElementById('modal-close').onclick = function () {
-            document.getElementById('package-modal').classList.add('hidden');
-        };
-        // Close modal on background click
-        document.getElementById('package-modal').addEventListener('click', function (e) {
-            if (e.target === this) {
-                this.classList.add('hidden');
+            // Close mobile menu when a menu link is clicked
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', function () {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                });
+            });
+
+            // Form submission with validation
+            document.getElementById('inquiry-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                if (name === '') {
+                    alert('Please enter your full name.');
+                    return;
+                }
+                if (email === '') {
+                    alert('Please enter a valid email.');
+                    return;
+                }
+                // Basic email validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                alert('Thank you for your inquiry, ' + name + '! We will get back to you soon via ' + email + '.');
+                this.reset();
+            });
+
+            // Helper to scroll by one card width
+            function scrollCards(containerId, direction) {
+                const container = document.getElementById(containerId);
+                const card = container.querySelector('.card');
+                if (card) {
+                    const scrollAmount = card.offsetWidth + 16; // 16px for gap
+                    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                }
             }
-        });
 
-        // Book Now button
-        document.getElementById('modal-book').onclick = function () {
-            const pkg = this.getAttribute('data-package');
-            // Scroll to inquiry form and prefill destination
-            document.getElementById('package-modal').classList.add('hidden');
-            document.getElementById('destination').value = Array.from(document.getElementById('destination').options).find(opt => opt.text.includes(pkg))?.value || document.getElementById('destination').options[0].value;
-            document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
-        };
+            // Horizontal scroll for South India section
+            document.getElementById('south-india-left').onclick = () => {
+                scrollCards('south-india-cards', -1);
+            };
+            document.getElementById('south-india-right').onclick = () => {
+                scrollCards('south-india-cards', 1);
+            };
+
+            // Horizontal scroll for International section
+            document.getElementById('international-left').onclick = () => {
+                scrollCards('international-cards', -1);
+            };
+            document.getElementById('international-right').onclick = () => {
+                scrollCards('international-cards', 1);
+            };
+
+            // Card data for both sections
+            const packageCards = [
+                // South India
+                {
+                    section: "south-india",
+                    title: "Kerala Backwaters",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01545311-486b-4eb7-8776-72b26d9a27f8.png",
+                    duration: "4 Nights / $599",
+                    description: "Cruise through emerald lazies and stay in charming houseboats."
+                },
+                {
+                    section: "south-india",
+                    title: "Mysore & Bangalore",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d37d1fc9-662d-4aa1-b980-ad67b4c46c55.png",
+                    duration: "5 Days / $699",
+                    description: "Royal palaces, vibrant markets, and tech-savvy city vibes."
+                },
+                {
+                    section: "south-india",
+                    title: "Tamil Nadu Heritage",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d7e6b18-0c4c-4227-946b-0d42f52e46ab.png",
+                    duration: "6 Days / $799",
+                    description: "Ancient temples, wildlife safaris, and coastal serenity."
+                },
+                {
+                    section: "south-india",
+                    title: "Goa Beach Escape",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/24a43e43-c25d-4042-9fbc-346bb37752da.png",
+                    duration: "5 Nights / $549",
+                    description: "Relaxed vibes, water sports, and vibrant nightlife."
+                },
+                {
+                    section: "south-india",
+                    title: "Karnataka Wildlife",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fd47822e-f3e5-4bbb-ac58-fd9f2679cda7.png",
+                    duration: "4 Days / $649",
+                    description: "Safari adventures with tigers and elephants."
+                },
+                {
+                    section: "south-india",
+                    title: "Andhra Pradesh Temples",
+                    img: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+                    duration: "5 Days / $599",
+                    description: "Visit Tirupati and other ancient temples."
+                },
+                {
+                    section: "south-india",
+                    title: "Hyderabad City",
+                    img: "https://images.pexels.com/photos/417142/pexels-photo-417142.jpeg",
+                    duration: "3 Days / $399",
+                    description: "Charminar, Biryani, and pearls shopping."
+                },
+                // International
+                {
+                    section: "international",
+                    title: "China Highlights",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba2609d8-efef-40f2-b16b-11cebf914562.png",
+                    duration: "8 Days / $1499",
+                    description: "Great Wall, Forbidden City, and ancient traditions."
+                },
+                {
+                    section: "international",
+                    title: "Japan Discovery",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/af8e4e85-5e83-4975-b5f5-3661fd28846f.png",
+                    duration: "10 Days / $2299",
+                    description: "Cherry blossoms, neon cities, and tranquil temples."
+                },
+                {
+                    section: "international",
+                    title: "USA East Coast",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/beb76b49-aac0-4b66-a5d5-24fe4b00331e.png",
+                    duration: "12 Days / $2799",
+                    description: "Skyline tours, history, and national parks."
+                },
+                {
+                    section: "international",
+                    title: "Thailand Islands",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f3639ea6-4c76-41d9-8f3f-f7e7b6ddaaaa.png",
+                    duration: "7 Days / $1299",
+                    description: "Tropical beaches, scuba diving, and island hopping."
+                },
+                {
+                    section: "international",
+                    title: "Europe Romance",
+                    img: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb0fed66-778e-4ac0-bf44-61674789f5fb.png",
+                    duration: "10 Days / $1999",
+                    description: "Paris, Rome, art, history, and culinary delights."
+                },
+                {
+                    section: "international",
+                    title: "Australia Wonders",
+                    img: "https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg",
+                    duration: "9 Days / $2599",
+                    description: "Sydney Opera, Great Barrier Reef, and wildlife."
+                },
+                {
+                    section: "international",
+                    title: "Dubai Luxury",
+                    img: "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg",
+                    duration: "6 Days / $1899",
+                    description: "Burj Khalifa, desert safari, and shopping festivals."
+                }
+            ];
+
+            // Attach click listeners to all cards in both sections
+            function attachCardListeners(sectionId, cardsSelector) {
+                const cards = document.querySelectorAll(`#${cardsSelector} .card`);
+                let cardIndex = 0;
+                cards.forEach(card => {
+                    card.setAttribute('data-card-index', cardIndex);
+                    card.addEventListener('click', function () {
+                        const pkg = packageCards.filter(p => p.section === sectionId)[cardIndex];
+                        if (pkg) {
+                            document.getElementById('modal-title').textContent = pkg.title;
+                            document.getElementById('modal-img').src = pkg.img;
+                            document.getElementById('modal-img').alt = pkg.title;
+                            document.getElementById('modal-duration').textContent = pkg.duration;
+                            document.getElementById('modal-description').textContent = pkg.description;
+                            document.getElementById('package-modal').classList.remove('hidden');
+                            // Store selected package for booking
+                            document.getElementById('modal-book').setAttribute('data-package', pkg.title);
+                        }
+                    });
+                    cardIndex++;
+                });
+            }
+            attachCardListeners('south-india', 'south-india-cards');
+            attachCardListeners('international', 'international-cards');
+
+            // Modal close
+            document.getElementById('modal-close').onclick = function () {
+                document.getElementById('package-modal').classList.add('hidden');
+            };
+            // Close modal on background click
+            document.getElementById('package-modal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                }
+            });
+
+            // Book Now button
+            document.getElementById('modal-book').onclick = function () {
+                const pkg = this.getAttribute('data-package');
+                // Scroll to inquiry form and prefill destination
+                document.getElementById('package-modal').classList.add('hidden');
+                document.getElementById('destination').value = Array.from(document.getElementById('destination').options).find(opt => opt.text.includes(pkg))?.value || document.getElementById('destination').options[0].value;
+                document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
+            };
+        });
     </script>
 </body>
 

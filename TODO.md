@@ -1,0 +1,3 @@
+- [x] Fix typo in script: documentF to document
+- [x] Add cursor: pointer to .card CSS for better UX
+- [ ] Test modal functionality
