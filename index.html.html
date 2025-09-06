@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bsa Tours And Air Travels - Discover South India and Beyond</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        #home {
+            height: 600px;
+        }
+
+        #home h2 {
+            padding-top: 80px;
+        }
+
+        .hero {
+            background-image: url('https://images.pexels.com/photos/12355317/pexels-photo-12355317.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-bg {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translateY(-10px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed top-0 w-full z-10">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- <h1 class="text-2xl font-bold text-blue-600">BSA Tours And Air Travels</h1> -->
+            <h1
+                class="flex items-center space-x-3 text-3xl font-bold text-black logo-title">
+                <img src="/path/to/logo.png" alt="BSA Logo" class="w-12 h-12">
+                <span>BSA Tours And Air Travels</span>
+            </h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
+                <li><a href="#south-india" class="text-gray-700 hover:text-blue-600 transition">South India Tours</a>
+                </li>
+                <li><a href="#international" class="text-gray-700 hover:text-blue-600 transition">International
+                        Trips</a></li>
+                <li><a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Testimonials</a></li>
+                <li><a href="#inquiry" class="text-gray-700 hover:text-blue-600 transition">Inquiry</a></li>
+            </ul>
+            <button class="md:hidden text-gray-700" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+        <ul class="md:hidden hidden space-y-2 px-6 py-2" id="mobile-menu">
+            <li><a href="#home" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+            <li><a href="#south-india" class="block text-gray-700 hover:text-blue-600">South India Tours</a></li>
+            <li><a href="#international" class="block text-gray-700 hover:text-blue-600">International Trips</a></li>
+            <li><a href="#testimonials" class="block text-gray-700 hover:text-blue-600">Testimonials</a></li>
+            <li><a href="#inquiry" class="block text-gray-700 hover:text-blue-600">Inquiry</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white text-center py-40 relative">
+        <div class="container mx-auto">
+
+            <!-- <h2 class="text-4xl font-bold mb-4 animate-bounce">Explore India & the World</h2> -->
+            <!-- <a href="#inquiry"
+                class="bg-blue-600 text-white px-10 py-4 rounded-lg hover:bg-blue-700 transition font-semibold shadow-lg transform hover:scale-105">Book
+                Your Tour</a> -->
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+    </section>
+
+    <!-- South India Tours Section -->
+    <section id="south-india" class="py-20 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16">Explore South India</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01545311-486b-4eb7-8776-72b26d9a27f8.png"
+                        alt="Serene backwaters of Kerala with traditional houseboats gliding through emerald canals surrounded by lush green rice fields and coconut palms"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Kerala Backwaters</h3>
+                    <p class="mb-2">4 Nights / $599</p>
+                    <p>Cruise through emerald lazies and stay in charming houseboats.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d37d1fc9-662d-4aa1-b980-ad67b4c46c55.png"
+                        alt="Famous Maratha architecture of Mysore Palace with detailed carvings, arches, and domes illuminated by golden lights at night"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Mysore & Bangalore</h3>
+                    <p class="mb-2">5 Days / $699</p>
+                    <p>Royal palaces, vibrant markets, and tech-savvy city vibes.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d7e6b18-0c4c-4227-946b-0d42f52e46ab.png"
+                        alt="Majestic ancient temples of Tamil Nadu like Brihadeeswarar Temple with intricate stone carvings and towering gopurams under a clear blue sky"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Tamil Nadu Heritage</h3>
+                    <p class="mb-2">6 Days / $799</p>
+                    <p>Ancient temples, wildlife safaris, and coastal serenity.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/24a43e43-c25d-4042-9fbc-346bb37752da.png"
+                        alt="Sandy white beaches of Goa with palm trees swaying in the breeze, colorful beach shacks, and azure Arabian Sea waves crashing gently"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Goa Beach Escape</h3>
+                    <p class="mb-2">5 Nights / $549</p>
+                    <p>Relaxed vibes, water sports, and vibrant nightlife.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fd47822e-f3e5-4bbb-ac58-fd9f2679cda7.png"
+                        alt="Dense evergreen forests of Bandipur National Park with tigers, elephants, and spotted deer under a canopy of tall trees"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Karnataka Wildlife</h3>
+                    <p class="mb-2">4 Days / $649</p>
+                    <p>Safari adventures with tigers and elephants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Trips Section -->
+    <section id="international" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16 text-white">Global Adventures</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba2609d8-efef-40f2-b16b-11cebf914562.png"
+                        alt="Breathtaking view of the Great Wall of China winding through misty mountains with traditional pagodas and lush green valleys"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">China Highlights</h3>
+                    <p class="mb-2">8 Days / $1499</p>
+                    <p>Great Wall, Forbidden City, and ancient traditions.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/af8e4e85-5e83-4975-b5f5-3661fd28846f.png"
+                        alt="Scenic Tokyo skyline with mount Fuji in the background, cherry blossoms, and traditional shrines amidst modern skyscrapers"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Japan Discovery</h3>
+                    <p class="mb-2">10 Days / $2299</p>
+                    <p>Cherry blossoms, neon cities, and tranquil temples.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/beb76b49-aac0-4b66-a5d5-24fe4b00331e.png"
+                        alt="Iconic Statue of Liberty and New York City skyline with the Hudson River and bridge, vibrant city lights at dusk"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">USA East Coast</h3>
+                    <p class="mb-2">12 Days / $2799</p>
+                    <p>Skyline tours, history, and national parks.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f3639ea6-4c76-41d9-8f3f-f7e7b6ddaaaa.png"
+                        alt="Crystal clear waters of Phuket beaches with longtail boats, turquoise lagoons, and lush green islands dotted with coconut trees"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Thailand Islands</h3>
+                    <p class="mb-2">7 Days / $1299</p>
+                    <p>Tropical beaches, scuba diving, and island hopping.</p>
+                </div>
+                <div class="card bg-white rounded-lg p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb0fed66-778e-4ac0-bf44-61674789f5fb.png"
+                        alt="Romantic view of Eiffel Tower at sunset in Paris with Seine River, cobblestone streets, and blooming gardens along the banks"
+                        class="mx-auto mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Europe Romance</h3>
+                    <p class="mb-2">10 Days / $1999</p>
+                    <p>Paris, Rome, art, history, and culinary delights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16">What Our Travelers Say</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial rounded-lg p-6">
+                    <p class="mb-4">"Amazing Kerala tour! The backwaters were breathtaking."</p>
+                    <p class="font-semibold">- Sarah J.</p>
+                </div>
+                <div class="testimonial rounded-lg p-6">
+                    <p class="mb-4">"Japan exceeded expectations – beautiful and cultural."</p>
+                    <p class="font-semibold">- Mark T.</p>
+                </div>
+                <div class="testimonial rounded-lg p-6">
+                    <p class="mb-4">"Great service and unforgettable experiences in Goa."</p>
+                    <p class="font-semibold">- Emily R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form Section -->
+    <section id="inquiry" class="py-20 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16">Plan Your Dream Trip</h2>
+            <form class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-10" id="inquiry-form">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 border rounded-lg" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 border rounded-lg" required>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-3 border rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Preferred Destination</label>
+                        <select id="destination" class="w-full px-4 py-3 border rounded-lg">
+                            <option>South India - Kerala</option>
+                            <option>South India - Mysore</option>
+                            <option>South India - Tamil Nadu</option>
+                            <option>South India - Goa</option>
+                            <option>South India - Karnataka Wildlife</option>
+                            <option>International - China</option>
+                            <option>International - Japan</option>
+                            <option>International - USA</option>
+                            <option>International - Thailand</option>
+                            <option>International - Europe</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Travel Dates</label>
+                        <input type="date" id="dates" class="w-full px-4 py-3 border rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Number of Travelers</label>
+                        <input type="number" min="1" id="travelers" class="w-full px-4 py-3 border rounded-lg">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Accommodation Type</label>
+                        <select id="accommodation" class="w-full px-4 py-3 border rounded-lg">
+                            <option>Luxury</option>
+                            <option>Standard</option>
+                            <option>Budget</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Budget Range</label>
+                        <input type="text" id="budget" placeholder="$1000 - $5000"
+                            class="w-full px-4 py-3 border rounded-lg">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Preferred Activities</label>
+                        <select id="activities" class="w-full px-4 py-3 border rounded-lg">
+                            <option>Beach & Relaxation</option>
+                            <option>Adventure & Hiking</option>
+                            <option>Cultural & Heritage</option>
+                            <option>Wildlife & Safari</option>
+                            <option>Mixed</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Dietary Restrictions</label>
+                        <input type="text" id="dietary" placeholder="Vegetarian, Gluten-free, etc."
+                            class="w-full px-4 py-3 border rounded-lg">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Additional Comments</label>
+                    <textarea id="comments" class="w-full px-4 py-3 border rounded-lg" rows="4"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-lg transform hover:scale-105">Submit
+                    Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-10">
+        <div class="container mx-auto">
+            <p class="text-lg">© 2023 Wanderlust Travels. All rights reserved. | Contact: info@wanderlusttravels.com</p>
+            <div class="mt-6">
+                <i class="fab fa-facebook text-2xl mx-4 hover:text-blue-400 transition"></i>
+                <i class="fab fa-twitter text-2xl mx-4 hover:text-blue-300 transition"></i>
+                <i class="fab fa-instagram text-2xl mx-4 hover:text-pink-400 transition"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form submission with validation
+        document.getElementById('inquiry-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            if (name === '') {
+                alert('Please enter your full name.');
+                return;
+            }
+            if (email === '') {
+                alert('Please enter a valid email.');
+                return;
+            }
+            // Basic email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            alert('Thank you for your inquiry, ' + name + '! We will get back to you soon via ' + email + '.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
+</content>
+</create_file>
