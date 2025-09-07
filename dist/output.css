@@ -694,12 +694,32 @@ video {
   height: 100%;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
+.h-40 {
+  height: 10rem;
+}
+
 .min-h-\[320px\] {
   min-height: 320px;
 }
 
 .min-h-\[420px\] {
   min-height: 420px;
+}
+
+.min-h-\[300px\] {
+  min-height: 300px;
+}
+
+.min-h-\[150px\] {
+  min-height: 150px;
+}
+
+.min-h-\[200px\] {
+  min-height: 200px;
 }
 
 .w-20 {
@@ -926,6 +946,21 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -966,6 +1001,16 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .font-bold {
@@ -1086,8 +1131,24 @@ video {
     margin-bottom: 2rem;
   }
 
+  .sm\:h-80 {
+    height: 20rem;
+  }
+
   .sm\:min-h-\[520px\] {
     min-height: 520px;
+  }
+
+  .sm\:min-h-\[350px\] {
+    min-height: 350px;
+  }
+
+  .sm\:min-h-\[200px\] {
+    min-height: 200px;
+  }
+
+  .sm\:min-h-\[250px\] {
+    min-height: 250px;
   }
 
   .sm\:w-72 {
@@ -1131,6 +1192,26 @@ video {
     padding-bottom: 6rem;
   }
 
+  .sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .sm\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .sm\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .sm\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1164,8 +1245,24 @@ video {
     height: 7rem;
   }
 
+  .md\:h-96 {
+    height: 24rem;
+  }
+
   .md\:min-h-\[600px\] {
     min-height: 600px;
+  }
+
+  .md\:min-h-\[400px\] {
+    min-height: 400px;
+  }
+
+  .md\:min-h-\[250px\] {
+    min-height: 250px;
+  }
+
+  .md\:min-h-\[3000px\] {
+    min-height: 3000px;
   }
 
   .md\:min-w-\[260px\] {
@@ -1207,6 +1304,26 @@ video {
   .md\:py-32 {
     padding-top: 8rem;
     padding-bottom: 8rem;
+  }
+
+  .md\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .md\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .md\:text-5xl {
