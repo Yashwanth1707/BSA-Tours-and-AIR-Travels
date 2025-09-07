@@ -105,33 +105,50 @@
 
 <body class="font-sans">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed top-0 w-full z-10">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="flex items-center space-x-3 text-3xl font-bold text-black logo-title">
-                <a href="#about" class="600 transition"><img src="images/logo.png" alt="BSA Logo" class="w-20 h-20"></a>
-                <span>BSA Air Travels</span>
-            </h1>
-            <ul class="hidden md:flex space-x-6">
-                <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
-                <li><a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a></li>
-                <li><a href="#south-india" class="text-gray-700 hover:text-blue-600 transition">India Tours</a>
-                </li>
-                <li><a href="#international" class="text-gray-700 hover:text-blue-600 transition">International
-                        Trips</a></li>
-                <li><a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Testimonials</a></li>
-                <li><a href="#inquiry" class="text-gray-700 hover:text-blue-600 transition">Inquiry</a></li>
-            </ul>
-            <button class="md:hidden text-gray-700" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-        </div>
-        <ul class="md:hidden hidden space-y-2 px-6 py-2" id="mobile-menu">
-            <li><a href="#about" class="block text-gray-700 hover:text-blue-600">Home</a></li>
-            <li><a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a></li>
-            <li><a href="#south-india" class="block text-gray-700 hover:text-blue-600">South India Tours</a></li>
-            <li><a href="#international" class="block text-gray-700 hover:text-blue-600">International Trips</a></li>
-            <li><a href="#testimonials" class="block text-gray-700 hover:text-blue-600">Testimonials</a></li>
-            <li><a href="#inquiry" class="block text-gray-700 hover:text-blue-600">Inquiry</a></li>
+   <nav class="bg-white shadow-lg fixed top-0 w-full z-20">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo + Title -->
+        <h1 class="flex items-center space-x-3">
+            <a href="#about" class="transition">
+                <img src="images/logo.png" alt="BSA Logo" class="w-16 h-16 sm:w-20 sm:h-20">
+            </a>
+            <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">BSA Air Travels</span>
+        </h1>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-8 text-lg font-medium">
+            <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a></li>
+            <li><a href="#south-india" class="text-gray-700 hover:text-blue-600 transition">India Tours</a></li>
+            <li><a href="#international" class="text-gray-700 hover:text-blue-600 transition">International Trips</a></li>
+            <li><a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Testimonials</a></li>
+            <li><a href="#inquiry" class="text-gray-700 hover:text-blue-600 transition">Inquiry</a></li>
         </ul>
-    </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-gray-700 text-3xl" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <ul class="md:hidden hidden flex-col space-y-3 px-6 py-4 bg-white shadow-md text-lg font-medium" id="mobile-menu">
+        <li><a href="#about" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+        <li><a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a></li>
+        <li><a href="#south-india" class="block text-gray-700 hover:text-blue-600">South India Tours</a></li>
+        <li><a href="#international" class="block text-gray-700 hover:text-blue-600">International Trips</a></li>
+        <li><a href="#testimonials" class="block text-gray-700 hover:text-blue-600">Testimonials</a></li>
+        <li><a href="#inquiry" class="block text-gray-700 hover:text-blue-600">Inquiry</a></li>
+    </ul>
+</nav>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById("mobile-menu-btn").addEventListener("click", function () {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+</script>
+
 
     <div class="h-24 md:h-28"></div>
 
