@@ -14,7 +14,9 @@
   ],
   "author": "Yashwanth Gunnam",
   "license": "MIT",
-  "devDependencies": {  
-     "tailwindcss": "^3.4.1"
+  "devDependencies": {
+     "tailwindcss": "^3.4.1",
+     "postcss": "^8.4.35",
+     "autoprefixer": "^10.4.19"
   }
 }
