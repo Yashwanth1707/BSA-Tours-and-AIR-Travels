@@ -196,39 +196,41 @@
                 <!-- Card 1 -->
                 <a href="#inquiry" class="group">
                     <div
-                        class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition group-hover:scale-105">
+                        class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition group-hover:scale-105 h-80 min-h-[320px] w-full sm:w-72">
                         <i class="fas fa-plane-departure text-blue-600 text-4xl mb-4"></i>
                         <h3 class="text-xl font-semibold mb-2">Flight Booking</h3>
-                        <p class="text-gray-600">BSA makes flight booking quick and effortless, offering the best deals
-                            on both domestic and international routes.</p>
+                        <p class="text-gray-600 overflow-auto">BSA makes flight booking quick and effortless, offering
+                            the best deals on both domestic and international routes.</p>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
                 <a href="#inquiry" class="group">
                     <div
-                        class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition group-hover:scale-105">
+                        class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition group-hover:scale-105 h-80 min-h-[320px] w-full sm:w-72">
                         <i class="fas fa-bus text-green-600 text-4xl mb-4"></i>
                         <h3 class="text-xl font-semibold mb-2">Bus Booking</h3>
-                        <p class="text-gray-600">BSA books tickets for you easily for a safe, affordable, and
-                            comfortable journey.</p>
+                        <p class="text-gray-600 overflow-auto">BSA books tickets for you easily for a safe, affordable,
+                            and comfortable journey.</p>
                     </div>
                 </a>
 
                 <!-- Card 3 -->
-                 <a href="#inquiry" class="group">
+                <a href="#inquiry" class="group">
                     <div
-                        class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition group-hover:scale-105">
+                        class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition group-hover:scale-105 h-80 min-h-[320px] w-full sm:w-72">
                         <i class="fas fa-route text-purple-600 text-4xl mb-4"></i>
                         <h3 class="text-xl font-semibold mb-2">Tours Booking</h3>
-                        <p class="text-gray-600">Discover exciting tour packages across India and international
-                            destinations. Choose from a wide range of tours that suit your interests and budget.</p>
+                        <p class="text-gray-600 overflow-auto">Discover exciting tour packages across India and
+                            international destinations. Choose from a wide range of tours that suit your interests and
+                            budget.</p>
                     </div>
                 </a>
 
             </div>
         </div>
     </section>
+
 
 
 
@@ -595,12 +597,20 @@
                 © 2025 BSA Air Travels. All rights reserved. | Contact: bsaairtravels16@gmail.com
             </p>
             <div class="mt-6">
-                <i class="fab fa-facebook text-2xl mx-4 hover:text-blue-400 transition"></i>
-                <i class="fab fa-whatsapp text-2xl mx-4 hover:text-green-400 transition"></i>
-                <i class="fab fa-instagram text-2xl mx-4 hover:text-pink-400 transition"></i>
+                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook text-2xl mx-4 hover:text-blue-400 transition"></i>
+                </a>
+
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp text-2xl mx-4 hover:text-green-400 transition"></i>
+                </a>
+
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram text-2xl mx-4 hover:text-pink-400 transition"></i>
+                </a>
             </div>
             <div class="mt-6 text-lg">
-                <strong>Phone:</strong> +91-98765 43210, +91-91234 56789
+                <strong>Phone:</strong> +91 6369543489, +65 81354668
             </div>
         </div>
     </footer>
@@ -625,11 +635,20 @@
         });
 
         // Form submission with validation
-        document.getElementById('inquiry-form').addEventListener('submit', function (event) {
+        document.getElementById('inquiry-form').addEventListener('submit', async function (event) {
             event.preventDefault();
+
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
+            const destination = document.getElementById('destination').value.trim();
+            const dates = document.getElementById('dates').value.trim();
+            const travelers = document.getElementById('travelers').value.trim();
+            const accommodation = document.getElementById('accommodation').value.trim();
+            const budget = document.getElementById('budget').value.trim();
+            const message = document.getElementById('comments').value.trim();
+
+            // Validation
             if (name === '') {
                 alert('Please enter your full name.');
                 return;
@@ -638,14 +657,53 @@
                 alert('Please enter a valid email.');
                 return;
             }
-            // Basic email validation
+
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
                 alert('Please enter a valid email address.');
                 return;
             }
-            alert('Thank you for your inquiry, ' + name + '! We will get back to you soon via ' + email + '.');
-            this.reset();
+            if (phone === '') {
+                alert('Please enter your phone number.');
+                return;
+            }
+
+            // Prepare data payload
+            const formData = {
+                name,
+                email,
+                phone,
+                destination,
+                dates,
+                travelers,
+                accommodation,
+                budget,
+                comments: message
+            };
+
+            try {
+                // Send to backend API
+                const response = await fetch('/send-whatsapp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('Your inquiry has been sent successfully via WhatsApp!');
+                    this.reset();
+                } else {
+                    alert('Failed to send inquiry: ' + (result.error || 'Unknown error'));
+                }
+
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Something went wrong. Please try again later.');
+            }
         });
 
         //Helper to scroll by one card width
