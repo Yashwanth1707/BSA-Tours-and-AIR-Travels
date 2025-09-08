@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: './src/variables.env' });
 const express = require('express');
 const fetch = require('node-fetch'); // or axios
 const rateLimit = require('express-rate-limit');
@@ -21,9 +21,9 @@ app.use('/send-whatsapp', limiter);
 const sanitizeInput = (str) => str ? xss(str.trim()) : '';
 
 // WhatsApp API endpoint
-const WHATSAPP_TOKEN = variables.env.WHATSAPP_TOKEN;
-const WHATSAPP_PHONE_NUMBER_ID = variables.env.WHATSAPP_PHONE_NUMBER_ID;
-const BUSINESS_NUMBER =variables.env.BUSINESS_NUMBER;
+const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
+const WHATSAPP_PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
+const BUSINESS_NUMBER = process.env.BUSINESS_NUMBER;
 
 // Endpoint to receive inquiry
 app.post('/send-whatsapp', async (req, res) => {

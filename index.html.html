@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bsa Air Travels - Discover India and Beyond</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link
@@ -105,42 +106,44 @@
 
 <body class="font-sans">
     <!-- Navigation -->
-   <nav class="bg-white shadow-lg fixed top-0 w-full z-20">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <!-- Logo + Title -->
-        <h1 class="flex items-center space-x-3">
-            <a href="#about" class="transition">
-                <img src="images/logo.png" alt="BSA Logo" class="w-16 h-16 sm:w-20 sm:h-20">
-            </a>
-            <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">BSA Air Travels</span>
-        </h1>
+    <nav class="bg-white shadow-lg fixed top-0 w-full z-20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo + Title -->
+            <h1 class="flex items-center space-x-3">
+                <a href="#about" class="transition">
+                    <img src="images/logo.png" alt="BSA Logo" class="w-16 h-16 sm:w-20 sm:h-20">
+                </a>
+                <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">BSA Air Travels</span>
+            </h1>
 
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-8 text-lg font-medium">
-            <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
-            <li><a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a></li>
-            <li><a href="#south-india" class="text-gray-700 hover:text-blue-600 transition">India Tours</a></li>
-            <li><a href="#international" class="text-gray-700 hover:text-blue-600 transition">International Trips</a></li>
-            <li><a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Testimonials</a></li>
-            <li><a href="#inquiry" class="text-gray-700 hover:text-blue-600 transition">Inquiry</a></li>
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a></li>
+                <li><a href="#south-india" class="text-gray-700 hover:text-blue-600 transition">India Tours</a></li>
+                <li><a href="#international" class="text-gray-700 hover:text-blue-600 transition">International
+                        Trips</a></li>
+                <li><a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Testimonials</a></li>
+                <li><a href="#inquiry" class="text-gray-700 hover:text-blue-600 transition">Inquiry</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 text-3xl" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <ul class="md:hidden hidden flex-col space-y-3 px-6 py-4 bg-white shadow-md text-lg font-medium"
+            id="mobile-menu">
+            <li><a href="#about" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+            <li><a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a></li>
+            <li><a href="#south-india" class="block text-gray-700 hover:text-blue-600">South India Tours</a></li>
+            <li><a href="#international" class="block text-gray-700 hover:text-blue-600">International Trips</a></li>
+            <li><a href="#testimonials" class="block text-gray-700 hover:text-blue-600">Testimonials</a></li>
+            <li><a href="#inquiry" class="block text-gray-700 hover:text-blue-600">Inquiry</a></li>
         </ul>
-
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-gray-700 text-3xl" id="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-
-    <!-- Mobile Dropdown -->
-    <ul class="md:hidden hidden flex-col space-y-3 px-6 py-4 bg-white shadow-md text-lg font-medium" id="mobile-menu">
-        <li><a href="#about" class="block text-gray-700 hover:text-blue-600">Home</a></li>
-        <li><a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a></li>
-        <li><a href="#south-india" class="block text-gray-700 hover:text-blue-600">South India Tours</a></li>
-        <li><a href="#international" class="block text-gray-700 hover:text-blue-600">International Trips</a></li>
-        <li><a href="#testimonials" class="block text-gray-700 hover:text-blue-600">Testimonials</a></li>
-        <li><a href="#inquiry" class="block text-gray-700 hover:text-blue-600">Inquiry</a></li>
-    </ul>
-</nav>
+    </nav>
 
     <div class="h-24 md:h-28"></div>
 
@@ -150,32 +153,24 @@
             <!-- Scrolling images carousel with Singapore Airlines flights included -->
             <div id="about-carousel" class="w-full h-full overflow-hidden">
                 <div id="about-carousel-track" class="flex w-max h-full animate-scroll-x">
-                    <img src="images/travel1.jpeg" alt="Travel 1"
-                        class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel2.jpeg" alt="Travel 2"
-                        class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel1.jpeg" alt="Travel 1" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel2.jpeg" alt="Travel 2" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
                     <!-- Singapore Airlines flight images -->
-                    <img src="images/travel3.jpeg"
-                        alt="Singapore Airlines A380" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel4.png"
-                        alt="Singapore Airlines 777" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel5.jpeg" alt="Travel 3"
+                    <img src="images/travel3.jpeg" alt="Singapore Airlines A380"
                         class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel6.jpeg" alt="Travel 4"
+                    <img src="images/travel4.png" alt="Singapore Airlines 777"
                         class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel5.jpeg" alt="Travel 3" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel6.jpeg" alt="Travel 4" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
                     <!-- Repeat for seamless scroll -->
-                    <img src="images/travel1.jpeg" alt="Travel 1"
+                    <img src="images/travel1.jpeg" alt="Travel 1" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel2.jpeg" alt="Travel 2" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel3.jpeg" alt="Singapore Airlines A380"
                         class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel2.jpeg" alt="Travel 2"
+                    <img src="images/travel4.png" alt="Singapore Airlines 777"
                         class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel3.jpeg"
-                        alt="Singapore Airlines A380" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel4.png"
-                        alt="Singapore Airlines 777" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel5.jpeg" alt="Travel 3"
-                        class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
-                    <img src="images/travel6.jpeg" alt="Travel 4"
-                        class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel5.jpeg" alt="Travel 3" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
+                    <img src="images/travel6.jpeg" alt="Travel 4" class="h-40 sm:h-80 md:h-96 w-auto object-cover" />
                 </div>
             </div>
             <!-- Decreased opacity overlay for clearer images -->
@@ -254,92 +249,134 @@
                     class="flex flex-nowrap overflow-x-auto space-x-4 sm:space-x-6 md:space-x-8 scrollbar-hide snap-x snap-mandatory pb-2">
                     <!-- Card 1 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/kerala.png"
-                            alt="Serene backwaters of Kerala" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Kerala Backwaters</h3>
-                        <p class="mb-2">4 Nights / $599</p>
-                        <p>Cruise through emerald lazies and stay in charming houseboats.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/kerala.png" alt="Serene backwaters of Kerala"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Kerala Backwaters</h3>
+                            <p>Drift through the calm backwaters of Kerala on a traditional houseboat and enjoy the lush
+                                green landscapes around you. This package offers a perfect blend of relaxation and
+                                nature,
+                                with scenic views, authentic Kerala cuisine, and peaceful surroundings.
+                                Ideal for families, couples, or anyone seeking a serene getaway.
+                            </p>
+                        </div>
                         <button
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 2 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/mysore.png"
-                            alt="Mysore Palace" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Mysore & Bangalore</h3>
-                        <p class="mb-2">5 Days / $699</p>
-                        <p>Royal palaces, vibrant markets, and tech-savvy city vibes.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/mysore.png" alt="Mysore Palace"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Mysore & Bangalore</h3>
+                            <p>Explore the cultural heritage of Mysore with its palaces, temples, and rich traditions,
+                                then
+                                experience the modern lifestyle and bustling city life of Bangalore.
+                                This package blends history with urban vibes, making it a perfect getaway for all kinds
+                                of
+                                travelers.
+                            </p>
+                        </div>
                         <button
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 3 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/tamil.png"
-                            alt="Tamil Nadu Temples" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Tamil Nadu Heritage</h3>
-                        <p class="mb-2">6 Days / $799</p>
-                        <p>Ancient temples, wildlife safaris, and coastal serenity.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/tamil.png" alt="Tamil Nadu Temples"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Tamil Nadu Heritage</h3>
+                            <p>Tamil Nadu is a land of ancient temples, classical dance, and vibrant traditions. From
+                                the
+                                architectural marvels of Madurai and Thanjavur to the serene beaches of Rameswaram and
+                                Kanyakumari, every corner tells a story.
+                                Add to it the cool hill stations like Ooty and Kodaikanal, and you have a perfect mix of
+                                heritage, spirituality, and nature.
+                            </p>
+                        </div>
                         <button
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 4 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/goa.png"
-                            alt="Goa Beach" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Goa Beach Escape</h3>
-                        <p class="mb-2">5 Nights / $549</p>
-                        <p class="mb-4">Relaxed vibes, water sports, and vibrant nightlife.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/goa.png" alt="Goa Beach" class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Goa</h3>
+                            <p>Unwind on Goa’s golden beaches, enjoy thrilling water sports, and experience the
+                                lively nightlife that makes Goa unforgettable.
+                                From beach shacks and seafood delights to Portuguese heritage and serene sunsets, this
+                                package is perfect for both relaxation and adventure seekers.
+                            </p>
+                        </div>
                         <button
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 5 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/karnataka.png"
-                            alt="Bandipur National Park" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Karnataka Wildlife</h3>
-                        <p class="mb-2">4 Days / $649</p>
-                        <p class="mb-4">Safari adventures with tigers and elephants.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/karnataka.png" alt="Bandipur National Park"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Karnataka Wildlife</h3>
+                            <p>Explore Karnataka’s famous wildlife sanctuaries and national parks, home to
+                                tigers, elephants, and diverse bird species. From the dense forests of Bandipur and
+                                Nagarhole to the scenic beauty of Kabini and Dandeli, this package is perfect for nature
+                                lovers and adventure seekers.
+                                Experience safaris, eco-stays, and the raw charm of the wilderness.
+                            </p>
+                        </div>
                         <button
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 6 (NEW) -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/travel2.jpeg"
-                            alt="Andhra Pradesh Temples" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Andhra Pradesh Temples</h3>
-                        <p class="mb-2">5 Days / $599</p>
-                        <p class="mb-4">Visit Tirupati and other ancient temples.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/tirupathi.jpg" alt="Andhra Pradesh Temples"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Andhra Pradesh </h3>
+                            <p>Andhra Pradesh is a land of diverse experiences — from the sacred Tirupati
+                                temple and ancient Buddhist sites to the stunning coastline of Visakhapatnam and Araku
+                                Valley’s scenic hills.
+                                With vibrant culture, delicious cuisine, and historic charm, this package offers a
+                                perfect
+                                mix of spirituality, history, and natural beauty.
+                            </p>
+                        </div>
                         <button
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 7 (NEW) -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/travel7.jpeg" alt="Hyderabad City"
-                            class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Hyderabad City</h3>
-                        <p class="mb-2">3 Days / $399</p>
-                        <p class="mb-4">Charminar, Biryani, and pearls shopping.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/hyderabad.jpg" alt="Hyderabad City"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Hyderabad City</h3>
+                            <p>Hyderabad blends history and modernity with iconic landmarks like Charminar,
+                                Golconda Fort, and Chowmahalla Palace. Explore bustling bazaars, savor the world-famous
+                                Hyderabadi biryani, and enjoy the city’s IT hub and modern lifestyle.
+                                A perfect mix of culture, cuisine, and city vibes.
+                            </p>
+                        </div>
                         <button
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
@@ -366,92 +403,128 @@
                     class="flex flex-nowrap overflow-x-auto space-x-4 sm:space-x-6 md:space-x-8 scrollbar-hide snap-x snap-mandatory pb-2">
                     <!-- Card 1 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/china.png"
-                            alt="Great Wall of China" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">China Highlights</h3>
-                        <p class="mb-2">8 Days / $1499</p>
-                        <p>Great Wall, Forbidden City, and ancient traditions.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/china.png" alt="Great Wall of China"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">China Highlights</h3>
+
+                            <p>Discover China’s iconic attractions — from the Great Wall and Forbidden City in Beijing
+                                to the Terracotta Warriors in Xi’an and the skyline of Shanghai. Cruise along the Li
+                                River, explore ancient temples, and experience vibrant local traditions.
+                                A journey that blends rich heritage with breathtaking landscapes and modern city life.
+                            </p>
+                        </div>
                         <button
-                            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 2 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/japan.png"
-                            alt="Tokyo Skyline" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Japan Discovery</h3>
-                        <p class="mb-2">10 Days / $2299</p>
-                        <p>Cherry blossoms, neon cities, and tranquil temples.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/japan.png" alt="Tokyo Skyline" class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Japan Discovery</h3>
+                            <p>From the serene temples of Kyoto and the iconic Mount Fuji to the bustling streets of
+                                Tokyo, Japan offers a perfect mix of heritage and innovation. Discover cherry blossoms,
+                                bullet trains, sushi delights, and vibrant culture.
+                                A journey that’s peaceful, modern, and unforgettable.
+                            </p>
+                        </div>
                         <button
-                            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 3 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/usa.png"
-                            alt="Statue of Liberty" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">USA East Coast</h3>
-                        <p class="mb-2">12 Days / $2799</p>
-                        <p>Skyline tours, history, and national parks.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/usa.png" alt="Statue of Liberty"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">USA East Coast</h3>
+
+                            <p>From the bustling streets of New York City and the historic monuments of Washington D.C.
+                                to the cultural charm of Boston and the scenic beauty of Niagara Falls, the East Coast
+                                offers it all.
+                                Experience world-famous attractions, diverse cuisines, and vibrant city life in one
+                                unforgettable journey.
+                            </p>
+                        </div>
                         <button
-                            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 4 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/thailand.png"
-                            alt="Phuket Beaches" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Thailand Islands</h3>
-                        <p class="mb-2">7 Days / $1299</p>
-                        <p>Tropical beaches, scuba diving, and island hopping.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/thailand.png" alt="Phuket Beaches"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Thailand Islands</h3>
+                            <p>Thailand offers the perfect mix of relaxation and adventure — from the golden temples of
+                                Bangkok and the bustling markets of Pattaya to the serene beaches of Phuket and Krabi.
+                                Enjoy exotic cuisine, water sports, and rich cultural experiences that make Thailand one
+                                of Asia’s top holiday destinations.
+                            </p>
+                        </div>
                         <button
-                            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 5 -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/europe.png"
-                            alt="Eiffel Tower Paris" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Europe Romance</h3>
-                        <p class="mb-2">10 Days / $1999</p>
-                        <p>Paris, Rome, art, history, and culinary delights.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/europe.png" alt="Eiffel Tower Paris"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Europe Romance</h3>
+                            <p>Europe is a dream destination filled with history, art, and breathtaking landscapes. From
+                                the Eiffel Tower in Paris and gondola rides in Venice to the Swiss Alps and the cultural
+                                treasures of London, every city has its own story.
+                                A perfect blend of romance, adventure, and unforgettable memories.</p>
+                        </div>
                         <button
-                            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 6 (NEW) -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/travel5.jpeg"
-                            alt="Australia Sydney" class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Australia Wonders</h3>
-                        <p class="mb-2">9 Days / $2599</p>
-                        <p>Sydney Opera, Great Barrier Reef, and wildlife.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/australia.jpg" alt="Australia Sydney"
+                            class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Australia Wonders</h3>
+                            <p>Australia offers a perfect mix of adventure, wildlife, and modern attractions. Explore
+                                the iconic Sydney Opera House, the Great Barrier Reef, and the scenic landscapes of the
+                                Outback.
+                                From golden beaches and bustling cities to unique wildlife encounters, every moment in
+                                Australia is unforgettable.
+                            </p>
+                        </div>
                         <button
-                            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
                     <!-- Card 7 (NEW) -->
                     <div
-                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start">
-                        <img src="images/travel6.jpeg" alt="Dubai Skyline"
-                            class="mx-auto mb-4 rounded" />
-                        <h3 class="text-xl font-semibold mb-2">Dubai Luxury</h3>
-                        <p class="mb-2">6 Days / $1899</p>
-                        <p>Burj Khalifa, desert safari, and shopping festivals.</p>
+                        class="card bg-white rounded-lg p-4 sm:p-6 text-center min-w-[85vw] sm:min-w-[320px] md:min-w-[260px] max-w-xs mx-auto snap-start flex flex-col h-96">
+                        <img src="images/dubai.jpg" alt="Dubai Skyline" class="w-full h-48 object-cover rounded mb-4" />
+                        <div class="flex-grow pb-4">
+                            <h3 class="text-xl font-semibold mb-2">Dubai Luxury</h3>
+                            <p>Dubai is the ultimate luxury destination, blending modern marvels with Arabian elegance.
+                                Stay in world-class hotels, shop at designer malls, and enjoy desert safaris, private
+                                yachts, and fine dining.
+                                From the Burj Khalifa’s breathtaking views to the charm of Dubai Marina, every moment is
+                                crafted for a lavish experience.</p>
+                        </div>
                         <button
-                            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition more-info-btn">
+                            class="mt-4 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition">
                             More Info
                         </button>
                     </div>
@@ -509,16 +582,21 @@
                     <div>
                         <label class="block text-gray-700 mb-2">Preferred Destination</label>
                         <select id="destination" class="w-full px-4 py-3 border rounded-lg">
-                            <option>South India - Kerala</option>
-                            <option>South India - Mysore</option>
-                            <option>South India - Tamil Nadu</option>
-                            <option>South India - Goa</option>
-                            <option>South India - Karnataka Wildlife</option>
+                            <option>Kerala</option>
+                            <option>Mysore & Banglore</option>
+                            <option>Tamil Nadu</option>
+                            <option>Goa</option>
+                            <option>Karnataka Wildlife</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Hyderabad</option>
                             <option>International - China</option>
                             <option>International - Japan</option>
                             <option>International - USA</option>
                             <option>International - Thailand</option>
                             <option>International - Europe</option>
+                            <option>International - Australia</option>
+                            <option>International - Dubai</option>
+                            <option>other</option>
                         </select>
                     </div>
                 </div>
@@ -543,7 +621,7 @@
                     </div>
                     <div>
                         <label class="block text-gray-700 mb-2">Budget Range</label>
-                        <input type="text" id="budget" placeholder="$1000 - $5000"
+                        <input type="text" id="budget" placeholder="₹1000 - ₹100000"
                             class="w-full px-4 py-3 border rounded-lg">
                     </div>
                 </div>
@@ -804,7 +882,8 @@
     </script>
 
     <!-- Floating WhatsApp Icon -->
-    <a href="https://wa.me/916369543489?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20travel%20packages." target="_blank" rel="noopener noreferrer"
+    <a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20travel%20packages."
+        target="_blank" rel="noopener noreferrer"
         class="fixed bottom-6 right-6 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition z-50">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
