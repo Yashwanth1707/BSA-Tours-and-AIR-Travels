@@ -1,47 +1,52 @@
-require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
-const fetch = require('node-fetch');
+// Load environment variables
+import dotenv from "dotenv";
+import express from "express";
+import bodyParser from "body-parser";
 
-const cors = require('cors');
+dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
 
-const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
-const WHATSAPP_PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
-const BUSINESS_NUMBER = process.env.BUSINESS_NUMBER;
+// WhatsApp send endpoint
+app.post("/send-whatsapp", async (req, res) => {
+  try {
+    const { message } = req.body;
 
-app.post('/send-whatsapp', async (req, res) => {
-    try {
-        const { message } = req.body;
-        console.log("📩 Incoming request body:", req.body);
-
-        if (!message) return res.status(400).json({ error: 'Message is required' });
-
-        const response = await fetch(`https://graph.facebook.com/v17.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${WHATSAPP_TOKEN}`
-            },
-            body: JSON.stringify({
-                messaging_product: 'whatsapp',
-                to: BUSINESS_NUMBER,
-                type: 'text',
-                text: { body: message }
-            })
-        });
-
-        const data = await response.json();
-        if (response.ok) res.json({ success: true });
-        else res.status(500).json({ error: data });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Internal server error' });
+    if (!message) {
+      return res.status(400).json({ error: "Message is required" });
     }
+
+    const url = `https://graph.facebook.com/v17.0/${process.env.WHATSAPP_PHONE_NUMBER_ID}/messages`;
+
+    // ✅ Native fetch (no node-fetch needed)
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.WHATSAPP_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        messaging_product: "whatsapp",
+        to: process.env.BUSINESS_NUMBER,
+        type: "text",
+        text: { body: message },
+      }),
+    });
+
+    const data = await response.json();
+    console.log("WhatsApp API response:", data);
+
+    if (!response.ok) {
+      return res.status(response.status).json({ error: data });
+    }
+
+    res.json({ success: true, data });
+  } catch (err) {
+    console.error("WhatsApp send error:", err);
+    res.status(500).json({ error: "Internal server error", details: err.message });
+  }
 });
 
 const PORT = process.env.PORT || 5500;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

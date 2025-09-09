@@ -1,6 +1,7 @@
 {
   "name": "bsa-tours-and-air-travels",
   "version": "1.0.0",
+  "type": "module",
   "description": "BSA Tours and Air Travels website",
   "main": "index.html",
   "scripts": {
