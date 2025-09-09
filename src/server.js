@@ -1,7 +1,8 @@
 require('dotenv').config();
-import fetch from "node-fetch";
 const express = require('express');
+const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
+
 const cors = require('cors');
 
 const app = express();

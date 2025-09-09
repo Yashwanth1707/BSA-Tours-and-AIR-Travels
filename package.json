@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "BSA Tours and Air Travels website",
   "main": "index.html",
-  
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-      "start": "node src/server.js"
-
+    "start": "node src/server.js"
   },
   "keywords": [
     "travel",
@@ -26,7 +24,6 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
-    "fetch": "^1.1.0",
     "node": "^20.19.5",
     "node-fetch": "^3.3.2"
   }
