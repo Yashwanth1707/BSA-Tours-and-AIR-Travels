@@ -1,6 +1,7 @@
 require('dotenv').config();
+import fetch from "node-fetch";
 const express = require('express');
-const fetch = require('node-fetch'); // or axios
+const fetch = require('node-fetch');
 const cors = require('cors');
 
 const app = express();
@@ -14,7 +15,8 @@ const BUSINESS_NUMBER = process.env.BUSINESS_NUMBER;
 app.post('/send-whatsapp', async (req, res) => {
     try {
         const { message } = req.body;
-        console.log("inside server.js");
+        console.log("📩 Incoming request body:", req.body);
+
         if (!message) return res.status(400).json({ error: 'Message is required' });
 
         const response = await fetch(`https://graph.facebook.com/v17.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`, {

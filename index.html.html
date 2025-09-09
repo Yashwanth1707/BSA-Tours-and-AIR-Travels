@@ -777,10 +777,10 @@
 
             try {
                 // Send to backend API
-                const response = await fetch('/send-whatsapp', {
+                const response = await fetch('https://bsa-tours-and-air-travels.onrender.com/send-whatsapp',{
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json' 
                     },
                     body: JSON.stringify(formData)
                 });
