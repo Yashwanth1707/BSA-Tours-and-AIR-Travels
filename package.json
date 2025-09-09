@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "BSA Tours and Air Travels website",
   "main": "index.html",
+  
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+      "start": "node src/server.js"
+
   },
   "keywords": [
     "travel",
