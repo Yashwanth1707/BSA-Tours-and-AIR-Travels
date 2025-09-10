@@ -13,11 +13,29 @@ app.use(bodyParser.json());
 
 
 // Allow requests from your frontend
-app.use(cors({
-  origin: "http://127.0.0.1:3000", // frontend URL
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+// List of allowed origins
+const allowedOrigins = [
+  "https://bsaairtravels.vercel.app",
+  "http://127.0.0.1:5500",
+  "http://127.0.0.1:3000"
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  })
+);
 
 app.use(bodyParser.json());
 
