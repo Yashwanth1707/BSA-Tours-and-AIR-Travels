@@ -2,16 +2,21 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import nodemailer from "nodemailer";
+
 
 dotenv.config();
-
 const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+
 
 // Allow requests from your frontend
 app.use(cors({
   origin: "http://127.0.0.1:3000", // frontend URL
-  methods: ["GET","POST"],
-  allowedHeaders: ["Content-Type","Authorization"]
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(bodyParser.json());
@@ -48,3 +53,61 @@ app.post("/send-whatsapp", async (req, res) => {
 
 const PORT = process.env.PORT || 5500;
 app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+
+
+
+// Email API route
+app.post("/send-email", async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      phone,
+      destination,
+      dates,
+      travelers,
+      accommodation,
+      budget,
+      message
+    } = req.body;
+
+    // Configure transporter (Gmail example, you can replace with SMTP)
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER, // Your Gmail
+        pass: process.env.EMAIL_PASS  // App password
+      }
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: "yashwanthgunam@gmail.com", // Where you want to receive inquiries
+      subject: "New Travel Inquiry",
+      text: `
+        New Inquiry from Website:
+
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+        Destination: ${destination}
+        Dates: ${dates}
+        Travelers: ${travelers}
+        Accommodation: ${accommodation}
+        Budget: ${budget}
+        Message: ${message}
+      `
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({ success: true, message: "Email sent successfully!" });
+  } catch (error) {
+    console.error("Email error:", error);
+    res.status(500).json({ success: false, error: "Failed to send email" });
+  }
+});
+
+app.listen(5500, () => {
+  console.log("🚀 Server running on port 5500");
+});
