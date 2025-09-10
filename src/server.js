@@ -88,7 +88,7 @@ app.post("/send-email", async (req, res) => {
        ${message ? `Message: ${message}` : ''}
 
        Regards,
-       Bot
+       Bot`
     };
 
     await transporter.sendMail(mailOptions);
