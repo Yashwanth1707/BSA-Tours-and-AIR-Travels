@@ -84,7 +84,6 @@ app.post("/send-email", async (req, res) => {
       to: "yashwanthgunam@gmail.com", // Where you want to receive inquiries
       subject: "New Travel Inquiry",
       text: `
-        New Inquiry from Website:
        ${message ? `Message: ${message}` : ''}
 
        Regards,
@@ -102,4 +101,4 @@ app.post("/send-email", async (req, res) => {
 
 
 const PORT = process.env.PORT || 5500;
-app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${ PORT }`));
+app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
