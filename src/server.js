@@ -70,9 +70,6 @@ app.post("/send-whatsapp", async (req, res) => {
 });
 
 
-
-
-
 // Email API route
 app.post("/send-email", async (req, res) => {
   try {
@@ -99,12 +96,11 @@ app.post("/send-email", async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "yashwanthgunam@gmail.com", // Where you want to receive inquiries
+      to: "yashwanthgunam@gmail.com", // Recipient
       subject: "New Travel Inquiry",
-      text: ` ${message ? ` ${message}` : ''}
-       Regards,
-       Bot`
+      text: `${message ? `${message}\n\n` : ''}Regards,\nBSA Air Travels Bot`
     };
+
 
     await transporter.sendMail(mailOptions);
 
