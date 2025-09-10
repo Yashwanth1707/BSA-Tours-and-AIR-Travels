@@ -85,17 +85,10 @@ app.post("/send-email", async (req, res) => {
       subject: "New Travel Inquiry",
       text: `
         New Inquiry from Website:
+       ${message ? `Message: ${message}` : ''}
 
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone}
-        Destination: ${destination}
-        Dates: ${dates}
-        Travelers: ${travelers}
-        Accommodation: ${accommodation}
-        Budget: ${budget}
-        Message: ${message}
-      `
+       Regards,
+       Bot
     };
 
     await transporter.sendMail(mailOptions);
@@ -109,4 +102,4 @@ app.post("/send-email", async (req, res) => {
 
 
 const PORT = process.env.PORT || 5500;
-app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${ PORT }`));
