@@ -51,8 +51,7 @@ app.post("/send-whatsapp", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5500;
-app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+
 
 
 
@@ -108,6 +107,6 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-app.listen(5500, () => {
-  console.log("🚀 Server running on port 5500");
-});
+
+const PORT = process.env.PORT || 5500;
+app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
