@@ -83,9 +83,7 @@ app.post("/send-email", async (req, res) => {
       from: process.env.EMAIL_USER,
       to: "yashwanthgunam@gmail.com", // Where you want to receive inquiries
       subject: "New Travel Inquiry",
-      text: `
-       ${message ? `Message: ${message}` : ''}
-
+      text: ` ${message ? ` ${message}` : ''}
        Regards,
        Bot`
     };
