@@ -12,6 +12,19 @@ app.use(bodyParser.json());
 
 
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+// Serve static assets (CSS, JS, images if needed)
+app.use(express.static(path.join(__dirname, "public"))); 
+// Put your CSS/JS/images inside a `public/` folder
+
+// Serve index.html at root
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html")); 
+});
+
 // Allow requests from your frontend
 // List of allowed origins
 const allowedOrigins = [
@@ -96,7 +109,7 @@ app.post("/send-email", async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "yashwanthgunam@gmail.com", // Recipient
+      to: process.env.EMAIL_USER, // Recipient
       subject: "New Travel Inquiry",
       text: `${message ? `${message}\n\n` : ''}Regards,\nBSA Air Travels Bot`
     };
