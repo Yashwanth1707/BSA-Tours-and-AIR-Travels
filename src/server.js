@@ -17,13 +17,14 @@ const __dirname = path.dirname(__filename);
 app.use(cors());
 app.use(bodyParser.json());
 
-// ✅ Serve static files (CSS, JS, images from "public/")
-app.use(express.static(path.join(__dirname, "public")));
+// ✅ Serve static files from public/
+app.use(express.static(path.join(process.cwd(), "public")));
 
-// ✅ Serve index.html at root
+// ✅ Serve index.html from src/
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
+
 
 // WhatsApp API route
 app.post("/send-whatsapp", async (req, res) => {
