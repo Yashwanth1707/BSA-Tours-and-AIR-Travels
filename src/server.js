@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // ✅ Serve index.html at root
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(process.cwd(), "index.html"));  // ✅ looks at project root
 });
 
 // WhatsApp API route
