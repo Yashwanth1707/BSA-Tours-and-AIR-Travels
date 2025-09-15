@@ -3,57 +3,29 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-import { fileURLToPath } from "url"; 
-
+import path from "path";   // ✅ import path
+import { fileURLToPath } from "url"; // ✅ import fileURLToPath
 
 dotenv.config();
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
-
-
+// ✅ Setup __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-// Serve static assets (CSS, JS, images if needed)
-app.use(express.static(path.join(__dirname, "public"))); 
-// Put your CSS/JS/images inside a `public/` folder
-
-// Serve index.html at root
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html")); 
-});
-
-// Allow requests from your frontend
-// List of allowed origins
-const allowedOrigins = [
-  "https://bsaairtravels.vercel.app",
-  "http://127.0.0.1:5500",
-  "http://127.0.0.1:3000"
-];
-
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or curl)
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  })
-);
-
+// Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
-// Your /send-whatsapp endpoint
+// ✅ Serve static files (CSS, JS, images from "public/")
+app.use(express.static(path.join(__dirname, "public")));
+
+// ✅ Serve index.html at root
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// WhatsApp API route
 app.post("/send-whatsapp", async (req, res) => {
   const { message } = req.body;
   if (!message) return res.status(400).json({ error: "Message is required" });
@@ -83,41 +55,27 @@ app.post("/send-whatsapp", async (req, res) => {
   }
 });
 
-
 // Email API route
 app.post("/send-email", async (req, res) => {
   try {
-    const {
-      name,
-      email,
-      phone,
-      destination,
-      dates,
-      travelers,
-      accommodation,
-      budget,
-      message
-    } = req.body;
+    const { name, email, phone, destination, dates, travelers, accommodation, budget, message } = req.body;
 
-    // Configure transporter (Gmail example, you can replace with SMTP)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Your Gmail
-        pass: process.env.EMAIL_PASS  // App password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Recipient
+      to: process.env.EMAIL_USER,
       subject: "New Travel Inquiry",
       text: `${message ? `${message}\n\n` : ''}Regards,\nBSA Air Travels Bot`
     };
 
-
     await transporter.sendMail(mailOptions);
-
     res.status(200).json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
     console.error("Email error:", error);
@@ -125,6 +83,6 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-
+// Start server
 const PORT = process.env.PORT || 5500;
 app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
